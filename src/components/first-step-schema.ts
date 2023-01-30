@@ -69,12 +69,33 @@ var FirstStepSchema: RJSFSchema = {
               "title": "24 Months"
             }
           ]
+        },
+        loanPurpose: {
+          type: "string",
+          title: "Loan Purpose",
+          anyOf: [
+            {
+              "type": "string",
+              "enum": [
+                "Medical"
+              ],
+              "title": "Medical"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "Education"
+              ],
+              "title": "Education"
+            }
+          ]
         }
       }
     },
     applicantDetails: {
       type: "object",
       title: "Applicant Details",
+      required: [],
       properties: {
         name: {
           title: "Applicant name",
